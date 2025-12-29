@@ -1,0 +1,226 @@
+[
+  {
+    "name": "Percutaneous Vertebral Augmentation (PVA) for Osteoporotic Vertebral Compression Fracture (VCF)",
+    "guideline_number": "L34106",
+    "description": "This policy outlines the coverage criteria for Percutaneous Vertebral Augmentation (PVA), including Percutaneous Vertebroplasty (PVP) and Kyphoplasty (PKP), for patients with acute or subacute osteoporotic vertebral compression fractures (VCFs). It details specific inclusion criteria based on fracture acuity, location, imaging findings, pain severity, and continuum of care, as well as absolute and relative contraindications.",
+    "restrictions": [
+      {
+        "condition": "Acute osteoporotic vertebral compression fracture (VCF) duration less than 6 weeks.",
+        "rule": "vcf_acuity_acute_duration_weeks < 6",
+        "codes": [],
+        "logic": "OR"
+      },
+      {
+        "condition": "Subacute osteoporotic vertebral compression fracture (VCF) duration between 6 and 12 weeks.",
+        "rule": "vcf_acuity_subacute_duration_weeks_min >= 6 AND vcf_acuity_subacute_duration_weeks_max <= 12",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Vertebral compression fracture (VCF) located from T1 to L5.",
+        "rule": "vcf_location_vertebral_levels = 'T1 \u2013 L5'",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "VCF documented by advanced imaging showing bone marrow edema on MRI.",
+        "rule": "imaging_bone_marrow_edema_mri_flag = TRUE",
+        "codes": [],
+        "logic": "OR"
+      },
+      {
+        "condition": "VCF documented by advanced imaging showing bone-scan/SPECT/CT uptake.",
+        "rule": "imaging_bone_scan_spect_ct_uptake_flag = TRUE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Patient is hospitalized with severe pain, indicated by a Numeric Rating Scale (NRS) or Visual Analog Scale (VAS) pain score of 8 or greater.",
+        "rule": "pain_score_nrs_threshold_hospitalized >= 8 OR pain_score_vas_threshold_hospitalized >= 8",
+        "codes": [],
+        "logic": "OR"
+      },
+      {
+        "condition": "Patient is non-hospitalized with moderate to severe pain, indicated by a Numeric Rating Scale (NRS) or Visual Analog Scale (VAS) pain score of 5 or greater.",
+        "rule": "pain_score_nrs_threshold_non_hospitalized >= 5 OR pain_score_vas_threshold_non_hospitalized >= 5",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Non-hospitalized patient's pain persists despite optimal non-surgical management (NSM) for a trial of at least 24 hours. Additionally, for acute VCFs, failed medical therapy must have been for a duration less than 3 weeks.",
+        "rule": "optimal_non_surgical_management_failure_flag = TRUE AND non_operative_medical_therapy_trial_duration_hours >= 24 AND medical_therapy_failure_window_weeks < 3",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "For non-hospitalized patients with moderate to severe pain despite NSM, experiencing worsening pain.",
+        "rule": "pain_worsening_flag = TRUE",
+        "codes": [],
+        "logic": "OR"
+      },
+      {
+        "condition": "For non-hospitalized patients with moderate to severe pain despite NSM, experiencing stable to improved pain but with an NRS or VAS pain score of 5 or greater, and at least two of the following four criteria are met (subsequent four restrictions detail these criteria).",
+        "rule": "pain_score_nrs_threshold_non_hospitalized >= 5 OR pain_score_vas_threshold_non_hospitalized >= 5",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Progression of vertebral body height loss (one of the criteria for non-hospitalized patients with stable/improved pain).",
+        "rule": "vertebral_body_height_loss_progression_flag = TRUE",
+        "codes": [],
+        "logic": "OR"
+      },
+      {
+        "condition": "Greater than 25% vertebral body height reduction (one of the criteria for non-hospitalized patients with stable/improved pain).",
+        "rule": "vertebral_body_height_reduction_percentage_threshold > 25",
+        "codes": [],
+        "logic": "OR"
+      },
+      {
+        "condition": "Presence of kyphotic deformity (one of the criteria for non-hospitalized patients with stable/improved pain).",
+        "rule": "kyphotic_deformity_flag = TRUE",
+        "codes": [],
+        "logic": "OR"
+      },
+      {
+        "condition": "Severe impact of VCF on daily functioning with a Roland Morris Disability Questionnaire (RDQ) score greater than 17 (one of the criteria for non-hospitalized patients with stable/improved pain).",
+        "rule": "daily_functioning_rdq_score_threshold > 17",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "All patients with VCF must be referred for evaluation of Bone Mineral Density (BMD) and osteoporosis education.",
+        "rule": "bone_mineral_density_evaluation_referral_flag = TRUE AND osteoporosis_education_referral_flag = TRUE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "All patients with VCF must be instructed to take part in an osteoporosis prevention/treatment program.",
+        "rule": "osteoporosis_prevention_treatment_program_participation_flag = TRUE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Current back pain must be primarily due to the identified acute or subacute VCF(s). (Absence of pain not primarily due to VCF).",
+        "rule": "back_pain_not_primarily_vcf_flag = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Absence of osteomyelitis.",
+        "rule": "osteomyelitis_flag = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Absence of discitis.",
+        "rule": "discitis_flag = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Absence of active systemic infection.",
+        "rule": "active_systemic_infection_flag = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Absence of surgical site infection.",
+        "rule": "surgical_site_infection_flag = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Patient is not pregnant.",
+        "rule": "pregnancy_flag = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Three or fewer vertebral fractures per procedure. (Exclusion for greater than three vertebral fractures per procedure).",
+        "rule": "vertebral_fracture_count_per_procedure_limit <= 3",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Absence of allergy to bone cement.",
+        "rule": "allergy_bone_cement_flag = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Absence of allergy to opacification agents.",
+        "rule": "allergy_opacification_agents_flag = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Absence of uncorrected coagulopathy.",
+        "rule": "uncorrected_coagulopathy_flag = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Absence of spinal instability.",
+        "rule": "spinal_instability_flag = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Absence of myelopathy from the fracture.",
+        "rule": "myelopathy_from_fracture_flag = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Absence of neurologic deficit.",
+        "rule": "neurologic_deficit_flag = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Absence of neural impingement.",
+        "rule": "neural_impingement_flag = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Absence of fracture retropulsion.",
+        "rule": "fracture_retropulsion_flag = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Absence of canal compromise.",
+        "rule": "canal_compromise_flag = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Percutaneous Vertebroplasty (PVP) procedure is covered.",
+        "rule": "procedure_percutaneous_vertebroplasty = TRUE",
+        "codes": [],
+        "logic": "OR"
+      },
+      {
+        "condition": "Kyphoplasty (PKP) procedure is covered.",
+        "rule": "procedure_kyphoplasty = TRUE",
+        "codes": [],
+        "logic": "OR"
+      },
+      {
+        "condition": "Covered CPT codes for Percutaneous Vertebral Augmentation (PVA) procedures.",
+        "rule": "procedure_code_CPT IN ('22510','22511','22512','22513','22514','22515')",
+        "codes": [
+          "22510",
+          "22511",
+          "22512",
+          "22513",
+          "22514",
+          "22515"
+        ],
+        "logic": "AND"
+      }
+    ]
+  }
+]

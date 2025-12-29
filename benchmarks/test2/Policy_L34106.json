@@ -1,0 +1,129 @@
+[
+  {
+    "name": "Percutaneous Vertebral Augmentation (PVA) for Osteoporotic Vertebral Compression Fracture (VCF)",
+    "guideline_number": "L34106",
+    "description": "This policy outlines coverage for Percutaneous Vertebral Augmentation (PVA), including percutaneous vertebroplasty (PVP) or kyphoplasty (PKP), for patients with acute or subacute osteoporotic vertebral compression fractures (VCF). It details specific inclusion criteria related to VCF onset, location, imaging, pain levels, and continuum of care, as well as various absolute and relative contraindications for the procedure.",
+    "restrictions": [
+      {
+        "condition": "Acute osteoporotic VCF (T1 \u2013 L5) based on symptom onset.",
+        "rule": "diagnosis_osteoporotic_vcf = TRUE AND vcf_anatomical_location BETWEEN 'T1' AND 'L5' AND vcf_onset_duration_acute_max_weeks < 6",
+        "codes": [],
+        "logic": "OR"
+      },
+      {
+        "condition": "Subacute osteoporotic VCF (6-12 weeks) (T1 \u2013 L5) based on symptom onset.",
+        "rule": "diagnosis_osteoporotic_vcf = TRUE AND vcf_anatomical_location BETWEEN 'T1' AND 'L5' AND vcf_onset_duration_subacute_min_weeks >= 6 AND vcf_onset_duration_subacute_max_weeks <= 12",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "VCF documented by advanced imaging showing bone marrow edema on MRI or bone-scan/SPECT/CT uptake.",
+        "rule": "vcf_imaging_mri_bone_marrow_edema = TRUE OR vcf_imaging_bone_scan_spect_ct_uptake = TRUE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Hospitalized with severe pain (Numeric Rating Scale (NRS) or Visual Analog Scale (VAS) pain score >= 8).",
+        "rule": "patient_pain_score_nrs_vas_hospitalized_min >= 8",
+        "codes": [],
+        "logic": "OR"
+      },
+      {
+        "condition": "Non-hospitalized with moderate to severe pain (NRS or VAS >=5) despite optimal non-surgical management, with worsening pain.",
+        "rule": "patient_pain_score_nrs_vas_non_hospitalized_min >= 5 AND non_surgical_management_attempted = TRUE AND pain_status_worsening = TRUE",
+        "codes": [],
+        "logic": "OR"
+      },
+      {
+        "condition": "Non-hospitalized with moderate to severe pain (NRS or VAS >=5) despite optimal non-surgical management, with stable to improved pain (but NRS or VAS still >=5) and at least two of the following: progression of vertebral body height loss, >25% vertebral body height reduction, kyphotic deformity, or severe impact of VCF on daily functioning (RDQ >17).",
+        "rule": "patient_pain_score_nrs_vas_non_hospitalized_min >= 5 AND non_surgical_management_attempted = TRUE AND pain_status_stable_or_improved_but_score_ge_5 = TRUE AND (((vcf_progression_vertebral_body_height_loss = TRUE)::integer + (vcf_vertebral_body_height_reduction_percentage_min > 25.0)::integer + (vcf_kyphotic_deformity_present = TRUE)::integer + (vcf_rdq_score_min > 17)::integer) >= 2)",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Referral for evaluation of Bone Mineral Density (BMD) and osteoporosis education is required for all patients with VCF.",
+        "rule": "bmd_evaluation_referral_required = TRUE AND osteoporosis_education_referral_required = TRUE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Participation in an osteoporosis prevention/treatment program is required for all patients with VCF.",
+        "rule": "osteoporosis_prevention_treatment_program_required = TRUE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Current back pain is not primarily due to the identified acute or subacute VCF(s) (Absolute Contraindication).",
+        "rule": "exclusion_back_pain_not_primarily_vcf_related = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Absence of osteomyelitis or discitis (Absolute Contraindication).",
+        "rule": "exclusion_osteomyelitis_or_discitis = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Absence of active systemic or surgical site infection (Absolute Contraindication).",
+        "rule": "exclusion_active_systemic_or_surgical_site_infection = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Patient is not pregnant (Absolute Contraindication).",
+        "rule": "exclusion_pregnancy = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "Not greater than three vertebral fractures per procedure (Relative Contraindication).",
+        "rule": "exclusion_greater_than_three_vertebral_fractures_per_procedure = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "No allergy to bone cement or opacification agents (Relative Contraindication).",
+        "rule": "exclusion_allergy_bone_cement_or_opacification_agents = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "No uncorrected coagulopathy (Relative Contraindication).",
+        "rule": "exclusion_uncorrected_coagulopathy = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "No spinal instability (Relative Contraindication).",
+        "rule": "exclusion_spinal_instability = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "No myelopathy from the fracture (Relative Contraindication).",
+        "rule": "exclusion_myelopathy_from_fracture = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "No neurologic deficit (Relative Contraindication).",
+        "rule": "exclusion_neurologic_deficit = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "No neural impingement (Relative Contraindication).",
+        "rule": "exclusion_neural_impingement = FALSE",
+        "codes": [],
+        "logic": "AND"
+      },
+      {
+        "condition": "No fracture retropulsion or canal compromise (Relative Contraindication).",
+        "rule": "exclusion_fracture_retropulsion_or_canal_compromise = FALSE",
+        "codes": [],
+        "logic": "AND"
+      }
+    ]
+  }
+]
