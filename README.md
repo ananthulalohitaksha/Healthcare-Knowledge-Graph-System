@@ -259,7 +259,7 @@ Output: Compliance report + Visualization
 
 ### 6.3 ❌ Patient 9384202577 — NOT ELIGIBLE
 
-[PDF](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/patient_data/patient_9384202577/MR_3.pdf) -- [OCR](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/OCR/pdf_ocr.py) -- [Parser](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/OCR/medical_record_parser.py) --> [JSON](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/patient_data/patient_9384202577/Patient_data_dictionary_9384202577.json)
+[PDF](knowledge_base/source_data/patient_data/patient_9384202577/MR_3.pdf) -- [OCR](agents/OCR/pdf_ocr.py) -- [Parser](agents/OCR/medical_record_parser.py) --> [JSON](knowledge_base/source_data/patient_data/patient_9384202577/Patient_data_dictionary_9384202577.json)
 
 ```json
 {
