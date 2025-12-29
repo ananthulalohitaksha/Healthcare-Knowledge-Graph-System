@@ -286,11 +286,11 @@ Output: Compliance report + Visualization
 
 #### Patient Knowledge Graph
 
-![Patient 9384202577 KG](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/patient_data/patient_9384202577/patient_kg.png)
+knowledge_base/source_data/patient_data/patient_9384202577/patient_kg.png
 
 #### Patient-Policy Compliance Graph
 
-![Patient 9384202577 - Bariatric KG](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/patient_data/patient_9384202577/patient_rule_kg.png)
+knowledge_base/source_data/patient_data/patient_9384202577/patient_rule_kg.png
 
 **Compliance Report** (`patient_data/patient_9384202577/pat_9384202577_pol_CGSURG83.json`):
 
