@@ -1,7 +1,7 @@
 
 ---
 
-# 🏥 Medical Policy Knowledge Graph Generator (Bariatric Surgery)
+# 🏥 Medical Policy Knowledge Graph Generator 
 
 A professional **multi-agent AI system** for transforming unstructured medical policies and patient records into **computable SQL logic** and **interactive Knowledge Graphs**.
 This toolkit provides end-to-end validation of **Bariatric Surgery eligibility (CG-SURG-83)** with full auditability.
