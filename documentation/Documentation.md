@@ -86,4 +86,4 @@ For the full, verbatim transcripts of the LLM prompts and raw JSON outputs used 
 
 ---
 
-If you want, I can also **reformat the tables and figure captions** to match professional publication style, so the Markdown looks fully polished and consistent. Do you want me to do that next?
+**This document is part of the CMU x Zyter Capstone Project.**
