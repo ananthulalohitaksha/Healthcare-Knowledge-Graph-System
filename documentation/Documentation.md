@@ -14,7 +14,6 @@ Modern healthcare delivery is burdened by the manual, inconsistent interpretatio
 The architecture is built upon a dual-stream pipeline that processes medical policies and patient records in parallel before converging at a decision engine.
 
 ![High-Level System Architecture](./Figures/high_level_arch.png)
-*Figure 1: High-Level System Architecture showing parallel processing streams*
 
 ### 3.1 Policy Processing Stream
 
@@ -25,7 +24,6 @@ This stream transforms narrative policy text into executable logic through four 
 4. **Agent 3: SQL Conversion**: Translates structured rules into an executable SQL WHERE clause.
 
 ![Policy Extraction Architecture](./Figures/policy_extraction_agents1.png)
-*Figure 2: Detailed Policy Extraction Architecture (Multi-Agent Pipeline)*
 
 ### 3.2 Patient Record Processing Stream
 * **Medical Record Parser**: Guided by the Data Dictionary, this agent interprets clinical context from unstructured physician notes to populate required fields.
@@ -38,7 +36,6 @@ The Decision Engine brings together outputs from both streams to systematically 
 * **Knowledge Graph Generation**: Color-coded visualization (Green for satisfied, Red for unmet) provides immediate interpretability and rapid clinical review.
 
 ![Patient Rule Knowledge Graph](./Figures/patient_rule_kg.png)
-*Figure 3: Patient Rule Knowledge Graph showing "Eligible" status for Bariatric Surgery*
 
 ## 5. Technical Validation
 
@@ -81,7 +78,6 @@ For the full, verbatim transcripts of the LLM prompts and raw JSON outputs used 
 **Figure 4. Summary of System Performance across Extraction Phases**
 
 ![Validation Metrics Summary](./Figures/validation_chart.png)
-*Figure 4: Summary of System Performance across Extraction Phases*
 
 ## 6. Limitations & Future Roadmap
 * **Unstable Extraction**: LLM-based extraction may fail on rare edge cases or deeply nested logical structures.
