@@ -286,11 +286,11 @@ Output: Compliance report + Visualization
 
 #### Patient Knowledge Graph
 
-knowledge_base/source_data/patient_data/patient_9384202577/patient_kg.png
+![Patient Knowledge Graph](knowledge_base/source_data/patient_data/patient_9384202577/patient_kg.png)
 
 #### Patient-Policy Compliance Graph
 
-knowledge_base/source_data/patient_data/patient_9384202577/patient_rule_kg.png
+![Patient-Policy Compliance Graph](knowledge_base/source_data/patient_data/patient_9384202577/patient_rule_kg.png)
 
 **Compliance Report** (`patient_data/patient_9384202577/pat_9384202577_pol_CGSURG83.json`):
 
