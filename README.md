@@ -163,7 +163,7 @@ WHERE patient_age >= 18
 
 **Bariatric Surgery Policy KG** (`Policy_CGSURG83/policy_rule_kg.png`)
 
-![Bariatric Surgery Policy KG](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/test1/Policy_CGSURG83/policy_rule_kg.png)
+![Bariatric Surgery Policy KG](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/knowledge_base/runtime_outputs/Run_Time_Policy/CGSURG_83/policy_rule_kg_CGSURG_83.png)
 
 ---
 
