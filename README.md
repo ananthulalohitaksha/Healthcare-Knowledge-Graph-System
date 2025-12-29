@@ -195,7 +195,7 @@ Output: Compliance report + Visualization
 
 ### 6.2 ✅ Patient 8472202544 — ELIGIBLE
 
-[PDF](knowledge_base/source_data/NCD_LCD_Syn_data/CGSURG_83/CGSURG_83_Record_001.pdf) $\rightarrow$ [OCR](agents/OCR/pdf_ocr.py) $\rightarrow$ [Parser](agents/OCR/medical_record_parser.py) $\rightarrow$ [JSON](knowledge_base/runtime_outputs/Run_Time_Patient/Patient_8472202544_Policy_CGSURG_83/Patient_data_8472202544.json)
+[PDF](knowledge_base/source_data/NCD_LCD_Syn_data/CGSURG_83/CGSURG_83_Record_001.pdf) $\rightarrow$ [OCR](agents/OCR/pdf_ocr.py) $\rightarrow$ [Parser](agents/OCR/medical_record_parser.py) $\rightarrow$ [JSON](knowledge_base/runtime_outputs/Run_Time_Patient/Patient_84722025445_Policy_CGSURG_83/Patient_data_8472-2025-445.json)
 
 ```json
 {
