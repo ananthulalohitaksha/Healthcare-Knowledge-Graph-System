@@ -221,7 +221,7 @@ Output: Compliance report + Visualization
 
 #### Patient Knowledge Graph
 
-![Patient 8472202544 KG](./knowledge_base/runtime_outputs/Run_Time_Patient/Patient_84722025445_Policy_CGSURG_83/patient_kg_interactive.html)
+![Patient 8472202544 KG](knowledge_base/source_data/patient_data/patient_8472202544/patient_kg.png)
 
 #### Patient-Policy Compliance Graph
 
