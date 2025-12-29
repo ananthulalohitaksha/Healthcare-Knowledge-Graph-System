@@ -384,8 +384,7 @@ Scores were averaged across **Zero-Shot** and **Chain-of-Thought (CoT)** prompti
 
 ---
 
-## 10. 🎓 Project Team
+## License
 
-This project was developed as part of the **CMU × Zyter Capstone Project**.
-
+Part of the CMU x Zyter Capstone Project.
 ---
