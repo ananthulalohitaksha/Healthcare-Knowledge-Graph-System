@@ -91,7 +91,7 @@ The system transforms the **Anthem Bariatric Surgery Policy (CG-SURG-83)** throu
 
 ### 4.1 Policy Extraction Agents Workflow
 
-![Policy Extraction Agents](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/Figures/policy_extraction_agents.png)
+![Policy Extraction Agents](Figures/policy_extraction_agents.png)
 
 ### 4.2 Data Field Extraction Agent
 
