@@ -199,7 +199,7 @@ Output: Compliance report + Visualization
 
 ```json
 {
-  "patient_id": "8472202544",
+  "patient_id": "8472-2025-445",
   "patient_age": 47,
   "patient_bmi": 42.4,
   "comorbidity_flag": true,
@@ -209,9 +209,9 @@ Output: Compliance report + Visualization
   "preop_psych_clearance": true,
   "preop_education_completed": true,
   "treatment_plan_documented": true,
-  "procedure_code_CPT": "43846",
-  "procedure_code_ICD10PCS": "0D160ZA",
-  "diagnosis_code_ICD10": "E66.01"
+  "procedure_code_CPT": null,
+  "procedure_code_ICD10PCS": null,
+  "diagnosis_code_ICD10": null
 }
 ```
 
