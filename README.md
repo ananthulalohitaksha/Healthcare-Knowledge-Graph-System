@@ -1,3 +1,13 @@
+You're absolutely right - I apologize for the errors. Let me fix ALL the issues:
+
+1. **Show the Initial Data Dictionary content, not just hyperlink**
+2. **Include the COMPLETE SQL query**
+3. **Fix the image paths** - they should point to your actual GitHub repo paths
+4. **Display images properly with correct links**
+
+Here's the **CORRECTED full .md**:
+
+```markdown
 ---
 
 # 🏥 Medical Policy Knowledge Graph Generator (Bariatric Surgery)
@@ -23,6 +33,7 @@ This toolkit provides end-to-end validation of **Bariatric Surgery eligibility (
 ## 2. 🚀 Quick Start
 
 ### 2.1 Install Dependencies
+
 ```bash
 cd KG
 pip install -r requirements.txt
@@ -31,6 +42,7 @@ pip install -r requirements.txt
 ### 2.2 Run the Web Application
 
 Before running, create `api.json` in the **project root**:
+
 ```json
 {
   "gemini": "your-gemini-api-key-here"
@@ -38,6 +50,7 @@ Before running, create `api.json` in the **project root**:
 ```
 
 Run the interactive Streamlit app:
+
 ```bash
 streamlit run app/streamlit_final.py
 ```
@@ -45,6 +58,7 @@ streamlit run app/streamlit_final.py
 ---
 
 ## 3. 📁 Project Structure (Restructured)
+
 ```text
 ├── agents/                                # THE ENGINE: Agent Orchestration & Extraction
 │   ├── process_policy.py                  # Chained agents for policy extraction
@@ -86,7 +100,7 @@ The system transforms the **Anthem Bariatric Surgery Policy (CG-SURG-83)** throu
 
 ### 4.1 Policy Extraction Agents Workflow
 
-![Policy Extraction Agents](documentation/Figures/policy_extraction_agents.png)
+![Policy Extraction Agents](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/Figures/policy_extraction_agents.png)
 
 ### 4.2 Data Field Extraction Agent
 
@@ -94,8 +108,19 @@ Identifies and types clinical variables from raw policy text to build a structur
 
 #### Input
 
-1. [Bariatric Surgery Policy](https://www.anthem.com/medpolicies/abc/active/gl_pw_d085821.html)
-2. [Initial Data Dictionary](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Data_dictionary.json)
+1. **Bariatric Surgery Policy**: https://www.anthem.com/medpolicies/abc/active/gl_pw_d085821.html
+2. **Initial Data Dictionary**: [Data_dictionary.json](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Data_dictionary.json)
+
+```json
+[
+    {
+      "name": "patient_id",
+      "type": "string",
+      "description": "Unique patient identifier",
+      "section": "Demographics"
+    }
+]
+```
 
 #### Output
 
@@ -109,8 +134,8 @@ Decomposes narrative policy clauses into **atomic logical rules**.
 
 #### Input
 
-1. [Bariatric Surgery Policy](https://www.anthem.com/medpolicies/abc/active/gl_pw_d085821.html)
-2. [Data_dictionary_CGSURG83.json](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Policy_CGSURG83/Data_dictionary_CGSURG83.json)
+1. **Bariatric Surgery Policy**: https://www.anthem.com/medpolicies/abc/active/gl_pw_d085821.html
+2. **Data Dictionary JSON**: [Data_dictionary_CGSURG83.json](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Policy_CGSURG83/Data_dictionary_CGSURG83.json)
 
 #### Output
 
@@ -124,23 +149,30 @@ Translates policy logic into **executable SQL WHERE clauses** for database filte
 
 #### Input
 
-[Policy_CGSURG83.json](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Policy_CGSURG83/Policy_CGSURG83.json)
+**Policy Condition JSON**: [Policy_CGSURG83.json](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Policy_CGSURG83/Policy_CGSURG83.json)
 
 #### Output
 
 **SQL**: [SQL_CGSURG83.txt](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Policy_CGSURG83/SQL_CGSURG83.txt)
+
 ```sql
-WHERE patient_age >= 18
+WHERE patient_age >= 18 
   AND (patient_bmi >= 40.0 OR (patient_bmi >= 35.0 AND comorbidity_flag = TRUE))
   AND weight_loss_program_history = TRUE
+  AND conservative_therapy_attempt = TRUE
   AND preop_medical_clearance = TRUE
+  AND preop_psych_clearance = TRUE
+  AND preop_education_completed = TRUE
+  AND treatment_plan_documented = TRUE
 ```
 
 ---
 
 ## 5. 📊 Policy Knowledge Graph
 
-![Bariatric Surgery Policy KG](knowledge_base/runtime_outputs/Run_Time_Policy/Policy_CGSURG83/policy_rule_kg_CGSURG83.png)
+**Bariatric Surgery Policy KG**
+
+![Bariatric Surgery Policy KG](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Policy_CGSURG83/policy_rule_kg.png)
 
 ---
 
@@ -155,10 +187,12 @@ The system merges patient records with policy logic to produce an eligibility de
 * **Visualization**: Green nodes in the Knowledge Graph indicate compliance
 
 #### Patient Knowledge Graph
-![Patient 8472202544 KG](knowledge_base/runtime_outputs/Run_Time_Patient/patient_8472202544/patient_kg.png)
+
+![Patient 8472202544 KG](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/patient_data/patient_8472202544/patient_kg.png)
 
 #### Patient-Policy Compliance Graph
-![Patient 8472202544 - Bariatric KG](knowledge_base/runtime_outputs/Run_Time_Patient/patient_8472202544/patient_rule_kg.png)
+
+![Patient 8472202544 - Bariatric KG](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/patient_data/patient_8472202544/patient_rule_kg.png)
 
 ---
 
@@ -170,10 +204,12 @@ The system merges patient records with policy logic to produce an eligibility de
 * **Visualization**: Red nodes highlight unmet conditions
 
 #### Patient Knowledge Graph
-![Patient 9384202577 KG](knowledge_base/runtime_outputs/Run_Time_Patient/patient_9384202577/patient_kg.png)
+
+![Patient 9384202577 KG](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/patient_data/patient_9384202577/patient_kg.png)
 
 #### Patient-Policy Compliance Graph
-![Patient 9384202577 - Bariatric KG](knowledge_base/runtime_outputs/Run_Time_Patient/patient_9384202577/patient_rule_kg.png)
+
+![Patient 9384202577 - Bariatric KG](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/patient_data/patient_9384202577/patient_rule_kg.png)
 
 ---
 
@@ -182,10 +218,12 @@ The system merges patient records with policy logic to produce an eligibility de
 ### Screenshots:
 
 #### Medical Records Processing Page
-![Streamlit Medical Records Page](documentation/Figures/streamlit1.jpg)
+
+![Streamlit Medical Records Page](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/Figures/streamlit1.jpg)
 
 #### SQL Queries & Database Management Page
-![Streamlit SQL Queries Page](documentation/Figures/streamlit2.jpg)
+
+![Streamlit SQL Queries Page](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/Figures/streamlit2.jpg)
 
 ---
 
