@@ -115,7 +115,7 @@ Identifies and types clinical variables from raw policy text to build a structur
 
 #### Output
 
-**Data Dictionary JSON**: [Data_dictionary_CGSURG83.json](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/test1/Policy_CGSURG83/Data_dictionary_CGSURG83.json)
+**Data Dictionary JSON**: [Data_dictionary_CGSURG_83.json](knowledge_base/runtime_outputs/Run_Time_Policy/CGSURG_83/Data_dictionary_CGSURG_83.json)
 
 ---
 
@@ -126,7 +126,8 @@ Decomposes narrative policy clauses into **atomic logical rules**.
 #### Input
 
 1. **Bariatric Surgery Policy**: https://www.anthem.com/medpolicies/abc/active/gl_pw_d085821.html
-2. **Data Dictionary JSON**: [Data_dictionary_CGSURG83.json](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/test1/Policy_CGSURG83/Data_dictionary_CGSURG83.json)
+2. **Data Dictionary JSON**: **Data Dictionary JSON**: [Data_dictionary_CGSURG_83.json](knowledge_base/runtime_outputs/Run_Time_Policy/CGSURG_83/Data_dictionary_CGSURG_83.json)
+
 
 #### Output
 
