@@ -1,6 +1,4 @@
 
----
-
 # 🏥 Medical Policy Knowledge Graph Generator (Bariatric Surgery)
 
 A professional **multi-agent AI system** for transforming unstructured medical policies and patient records into **computable SQL logic** and **interactive Knowledge Graphs**.
@@ -161,7 +159,7 @@ WHERE patient_age >= 18
 
 ## 5. 📊 Policy Knowledge Graph
 
-**Bariatric Surgery Policy KG**
+**Bariatric Surgery Policy KG** (`Policy_CGSURG83/policy_rule_kg.png`)
 
 ![Bariatric Surgery Policy KG](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Policy_CGSURG83/policy_rule_kg.png)
 
@@ -169,9 +167,49 @@ WHERE patient_age >= 18
 
 ## 6. 📊 Patient–Policy Compliance
 
-The system merges patient records with policy logic to produce an eligibility determination and visual explanation.
+The system processes medical policies and patient data through three main phases:
 
-### 6.1 ✅ Patient 8472202544 — ELIGIBLE
+```
+Phase 1: Policy Analysis
+Input: Policy rules (policy json/sql)
+Output: Policy knowledge graph
+
+Phase 2: Patient Analysis  
+Input: Patient data (patient record json)
+Output: Patient knowledge graph
+
+Phase 3: Compliance Evaluation
+Input: Patient data + Policy rules
+Output: Compliance report + Visualization
+```
+
+### 6.1 Generated Outputs
+
+**1. Policy Knowledge Graph**
+
+**2. Patient Knowledge Graphs**
+
+### 6.2 ✅ Patient 8472202544 — ELIGIBLE
+
+[PDF](patient_data/patient_8472202544/MR_2.pdf) -- [OCR](OCR/pdf_ocr.py) -- [Parser](OCR/medical_record_parser.py) --> [JSON](patient_data/patient_8472202544/Patient_data_dictionary_8472202544.json)
+
+```json
+{
+  "patient_id": "8472202544",
+  "patient_age": 47,
+  "patient_bmi": 42.4,
+  "comorbidity_flag": true,
+  "weight_loss_program_history": true,
+  "conservative_therapy_attempt": true,
+  "preop_medical_clearance": true,
+  "preop_psych_clearance": true,
+  "preop_education_completed": true,
+  "treatment_plan_documented": true,
+  "procedure_code_CPT": "43846",
+  "procedure_code_ICD10PCS": "0D160ZA",
+  "diagnosis_code_ICD10": "E66.01"
+}
+```
 
 * **Clinical Data**: BMI 42.4, Comorbidity present, Pre-op education completed
 * **Outcome**: All required conditions satisfied
@@ -185,9 +223,57 @@ The system merges patient records with policy logic to produce an eligibility de
 
 ![Patient 8472202544 - Bariatric KG](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/patient_data/patient_8472202544/patient_rule_kg.png)
 
+**Compliance Report** (`patient_data/patient_8472202544/pat_8472202544_pol_CGSURG83.json`):
+
+```json
+{
+  "patient_id": "8472202544",
+  "policy_id": "CGSURG83", 
+  "patient_met_policy": true,
+  "conditions": [
+    {
+      "condition": "Age requirement: Individual is 18 years or older.",
+      "rule": "patient_age >= 18",
+      "logic": "AND",
+      "is_met": true,
+      "logically_met": true,
+      "logical_status": "met"
+    },
+    {
+      "condition": "BMI 40 or greater.",
+      "rule": "patient_bmi >= 40.0",
+      "logic": "OR",
+      "is_met": true,
+      "logically_met": true,
+      "logical_status": "met"
+    }
+  ]
+}
+```
+
 ---
 
-### 6.2 ❌ Patient 9384202577 — NOT ELIGIBLE
+### 6.3 ❌ Patient 9384202577 — NOT ELIGIBLE
+
+[PDF](patient_data/patient_9384202577/MR_3.pdf) -- [OCR](OCR/pdf_ocr.py) -- [Parser](OCR/medical_record_parser.py) --> [JSON](patient_data/patient_9384202577/Patient_data_dictionary_9384202577.json)
+
+```json
+{
+  "patient_id": "9384202577",
+  "patient_age": 40,
+  "patient_bmi": 27.1,
+  "comorbidity_flag": true,
+  "weight_loss_program_history": true,
+  "conservative_therapy_attempt": true,
+  "preop_medical_clearance": true,
+  "preop_psych_clearance": true,
+  "preop_education_completed": false,
+  "treatment_plan_documented": true,
+  "procedure_code_CPT": "43775",
+  "procedure_code_ICD10PCS": "0DB64Z3",
+  "diagnosis_code_ICD10": "E66.01"
+}
+```
 
 * **Failure Reasons**:
   * BMI below threshold (27.1)
@@ -202,23 +288,87 @@ The system merges patient records with policy logic to produce an eligibility de
 
 ![Patient 9384202577 - Bariatric KG](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/patient_data/patient_9384202577/patient_rule_kg.png)
 
+**Compliance Report** (`patient_data/patient_9384202577/pat_9384202577_pol_CGSURG83.json`):
+
+```json
+{
+  "patient_id": "9384202577",
+  "policy_id": "CGSURG83",
+  "patient_met_policy": false,
+  "conditions": [
+    {
+      "condition": "Age requirement: Individual is 18 years or older.",
+      "rule": "patient_age >= 18",
+      "logic": "AND",
+      "is_met": true,
+      "logically_met": true,
+      "logical_status": "met"
+    },
+    {
+      "condition": "BMI 40 or greater.",
+      "rule": "patient_bmi >= 40.0",
+      "logic": "OR",
+      "is_met": false,
+      "logically_met": true,
+      "logical_status": "logically_met_by_other_or"
+    },
+    {
+      "condition": "Pre-operative education completed (risks, benefits, expectations, need for long-term follow-up, adherence to behavioral modifications).",
+      "rule": "preop_education_completed = TRUE",
+      "logic": "AND",
+      "is_met": false,
+      "logically_met": false,
+      "logical_status": "not_met"
+    }
+  ]
+}
+```
+
 ---
 
-## 7. 🌐 Streamlit Web Application
+## 7. 🚀 LLM Evaluation
+
+We provided both zero-shot and chain-of-thought prompts for LLM-based Evaluation in `benchmarks/prompts/Evaluation`
+
+We replaced the PLACEHOLDER in the prompt with the original OCRed text and generated files, then let LLMs to generate scores.
+
+Generally we pick 2 models (e.g. Gemini and Claude) and 2 prompts for each stage:
+1. Data field extraction
+2. Policy condition extraction  
+3. Patient data extraction
+
+So we have 4 evaluation results for each stage, then we take the average to compute the final recall, precision and accuracy.
+
+---
+
+## 8. 🌐 Streamlit Web Application
+
+The `streamlit_app.py` provides an interactive web interface for the complete workflow:
+
+### Features:
+
+- **📄 Medical Records Page**: Upload PDFs, extract text, parse patient data, generate knowledge graphs
+- **🗄️ SQL Queries Page**: View database, run policy filters, manage patient records
+
+### Usage:
+
+```bash
+streamlit run streamlit_app.py
+```
 
 ### Screenshots:
 
-#### Medical Records Processing Page
+**Medical Records Processing Page:**
 
 ![Streamlit Medical Records Page](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/Figures/streamlit1.jpg)
 
-#### SQL Queries & Database Management Page
+**SQL Queries & Database Management Page:**
 
 ![Streamlit SQL Queries Page](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/Figures/streamlit2.jpg)
 
 ---
 
-## 8. 🤖 Technical Validation (LLM-as-a-Judge)
+## 9. 🤖 Technical Validation (LLM-as-a-Judge)
 
 Validation was performed using **Gemini 1.5 Pro** and **Claude 3.5 Sonnet**.
 Scores were averaged across **Zero-Shot** and **Chain-of-Thought (CoT)** prompting strategies.
@@ -231,7 +381,7 @@ Scores were averaged across **Zero-Shot** and **Chain-of-Thought (CoT)** prompti
 
 ---
 
-## 9. 🎓 Project Team
+## 10. 🎓 Project Team
 
 This project was developed as part of the **CMU × Zyter Capstone Project**.
 
