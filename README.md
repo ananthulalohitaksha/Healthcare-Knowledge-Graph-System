@@ -1,4 +1,6 @@
 
+---
+
 # 🏥 Medical Policy Knowledge Graph Generator (Bariatric Surgery)
 
 A professional **multi-agent AI system** for transforming unstructured medical policies and patient records into **computable SQL logic** and **interactive Knowledge Graphs**.
@@ -89,7 +91,7 @@ The system transforms the **Anthem Bariatric Surgery Policy (CG-SURG-83)** throu
 
 ### 4.1 Policy Extraction Agents Workflow
 
-![Policy Extraction Agents](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/Figures/policy_extraction_agents.png)
+![Policy Extraction Agents](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/Figures/policy_extraction_agents.png)
 
 ### 4.2 Data Field Extraction Agent
 
@@ -98,7 +100,7 @@ Identifies and types clinical variables from raw policy text to build a structur
 #### Input
 
 1. **Bariatric Surgery Policy**: https://www.anthem.com/medpolicies/abc/active/gl_pw_d085821.html
-2. **Initial Data Dictionary**: [Data_dictionary.json](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Data_dictionary.json)
+2. **Initial Data Dictionary**: [Data_dictionary.json](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/test1/Data_dictionary.json)
 
 ```json
 [
@@ -113,7 +115,7 @@ Identifies and types clinical variables from raw policy text to build a structur
 
 #### Output
 
-**Data Dictionary JSON**: [Data_dictionary_CGSURG83.json](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Policy_CGSURG83/Data_dictionary_CGSURG83.json)
+**Data Dictionary JSON**: [Data_dictionary_CGSURG83.json](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/test1/Policy_CGSURG83/Data_dictionary_CGSURG83.json)
 
 ---
 
@@ -124,11 +126,11 @@ Decomposes narrative policy clauses into **atomic logical rules**.
 #### Input
 
 1. **Bariatric Surgery Policy**: https://www.anthem.com/medpolicies/abc/active/gl_pw_d085821.html
-2. **Data Dictionary JSON**: [Data_dictionary_CGSURG83.json](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Policy_CGSURG83/Data_dictionary_CGSURG83.json)
+2. **Data Dictionary JSON**: [Data_dictionary_CGSURG83.json](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/test1/Policy_CGSURG83/Data_dictionary_CGSURG83.json)
 
 #### Output
 
-**Policy Condition JSON**: [Policy_CGSURG83.json](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Policy_CGSURG83/Policy_CGSURG83.json)
+**Policy Condition JSON**: [Policy_CGSURG83.json](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/test1/Policy_CGSURG83/Policy_CGSURG83.json)
 
 ---
 
@@ -138,11 +140,11 @@ Translates policy logic into **executable SQL WHERE clauses** for database filte
 
 #### Input
 
-**Policy Condition JSON**: [Policy_CGSURG83.json](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Policy_CGSURG83/Policy_CGSURG83.json)
+**Policy Condition JSON**: [Policy_CGSURG83.json](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/test1/Policy_CGSURG83/Policy_CGSURG83.json)
 
 #### Output
 
-**SQL**: [SQL_CGSURG83.txt](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Policy_CGSURG83/SQL_CGSURG83.txt)
+**SQL**: [SQL_CGSURG83.txt](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/test1/Policy_CGSURG83/SQL_CGSURG83.txt)
 
 ```sql
 WHERE patient_age >= 18 
@@ -161,7 +163,7 @@ WHERE patient_age >= 18
 
 **Bariatric Surgery Policy KG** (`Policy_CGSURG83/policy_rule_kg.png`)
 
-![Bariatric Surgery Policy KG](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/test1/Policy_CGSURG83/policy_rule_kg.png)
+![Bariatric Surgery Policy KG](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/test1/Policy_CGSURG83/policy_rule_kg.png)
 
 ---
 
@@ -189,9 +191,11 @@ Output: Compliance report + Visualization
 
 **2. Patient Knowledge Graphs**
 
+**3. Compliance Reports**
+
 ### 6.2 ✅ Patient 8472202544 — ELIGIBLE
 
-[PDF](patient_data/patient_8472202544/MR_2.pdf) -- [OCR](OCR/pdf_ocr.py) -- [Parser](OCR/medical_record_parser.py) --> [JSON](patient_data/patient_8472202544/Patient_data_dictionary_8472202544.json)
+[PDF](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/patient_data/patient_8472202544/MR_2.pdf) -- [OCR](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/OCR/pdf_ocr.py) -- [Parser](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/OCR/medical_record_parser.py) --> [JSON](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/patient_data/patient_8472202544/Patient_data_dictionary_8472202544.json)
 
 ```json
 {
@@ -217,11 +221,11 @@ Output: Compliance report + Visualization
 
 #### Patient Knowledge Graph
 
-![Patient 8472202544 KG](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/patient_data/patient_8472202544/patient_kg.png)
+![Patient 8472202544 KG](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/patient_data/patient_8472202544/patient_kg.png)
 
 #### Patient-Policy Compliance Graph
 
-![Patient 8472202544 - Bariatric KG](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/patient_data/patient_8472202544/patient_rule_kg.png)
+![Patient 8472202544 - Bariatric KG](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/patient_data/patient_8472202544/patient_rule_kg.png)
 
 **Compliance Report** (`patient_data/patient_8472202544/pat_8472202544_pol_CGSURG83.json`):
 
@@ -255,7 +259,7 @@ Output: Compliance report + Visualization
 
 ### 6.3 ❌ Patient 9384202577 — NOT ELIGIBLE
 
-[PDF](patient_data/patient_9384202577/MR_3.pdf) -- [OCR](OCR/pdf_ocr.py) -- [Parser](OCR/medical_record_parser.py) --> [JSON](patient_data/patient_9384202577/Patient_data_dictionary_9384202577.json)
+[PDF](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/patient_data/patient_9384202577/MR_3.pdf) -- [OCR](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/OCR/pdf_ocr.py) -- [Parser](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/OCR/medical_record_parser.py) --> [JSON](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/patient_data/patient_9384202577/Patient_data_dictionary_9384202577.json)
 
 ```json
 {
@@ -282,11 +286,11 @@ Output: Compliance report + Visualization
 
 #### Patient Knowledge Graph
 
-![Patient 9384202577 KG](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/patient_data/patient_9384202577/patient_kg.png)
+![Patient 9384202577 KG](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/patient_data/patient_9384202577/patient_kg.png)
 
 #### Patient-Policy Compliance Graph
 
-![Patient 9384202577 - Bariatric KG](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/patient_data/patient_9384202577/patient_rule_kg.png)
+![Patient 9384202577 - Bariatric KG](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/patient_data/patient_9384202577/patient_rule_kg.png)
 
 **Compliance Report** (`patient_data/patient_9384202577/pat_9384202577_pol_CGSURG83.json`):
 
@@ -328,7 +332,7 @@ Output: Compliance report + Visualization
 
 ## 7. 🚀 LLM Evaluation
 
-We provided both zero-shot and chain-of-thought prompts for LLM-based Evaluation in `benchmarks/prompts/Evaluation`
+We provided both zero-shot and chain-of-thought prompts for LLM-based Evaluation in [benchmarks/prompts/Evaluation](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/tree/main/benchmarks/prompts/Evaluation)
 
 We replaced the PLACEHOLDER in the prompt with the original OCRed text and generated files, then let LLMs to generate scores.
 
@@ -360,11 +364,11 @@ streamlit run streamlit_app.py
 
 **Medical Records Processing Page:**
 
-![Streamlit Medical Records Page](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/Figures/streamlit1.jpg)
+![Streamlit Medical Records Page](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/Figures/streamlit1.jpg)
 
 **SQL Queries & Database Management Page:**
 
-![Streamlit SQL Queries Page](https://github.com/sijiasiga/Capstone_KG_VoiceAgents/blob/main/KG/Figures/streamlit2.jpg)
+![Streamlit SQL Queries Page](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/Figures/streamlit2.jpg)
 
 ---
 
