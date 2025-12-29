@@ -100,8 +100,8 @@ Identifies and types clinical variables from raw policy text to build a structur
 #### Input
 
 1. **Bariatric Surgery Policy**: https://www.anthem.com/medpolicies/abc/active/gl_pw_d085821.html
-2. **Initial Data Dictionary**: [Data_dictionary.json](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/test1/Data_dictionary.json)
-
+2. **Initial Data Dictionary**: [Data_dictionary.json](benchmarks/test1/Data_dictionary.json)
+   
 ```json
 [
     {
