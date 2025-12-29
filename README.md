@@ -1,6 +1,4 @@
 
----
-
 # 🏥 Medical Policy Knowledge Graph Generator 
 
 A professional **multi-agent AI system** for transforming unstructured medical policies and patient records into **computable SQL logic** and **interactive Knowledge Graphs**.
