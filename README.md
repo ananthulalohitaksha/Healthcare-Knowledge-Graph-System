@@ -364,11 +364,11 @@ streamlit run streamlit_app.py
 
 **Medical Records Processing Page:**
 
-![Streamlit Medical Records Page](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/Figures/streamlit1.jpg)
+![Streamlit Medical Records Page](documentation/Figures/streamlit1.jpg)
 
 **SQL Queries & Database Management Page:**
 
-![Streamlit SQL Queries Page](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/Figures/streamlit2.jpg)
+![Streamlit SQL Queries Page](documentation/Figures/streamlit2.jpg)
 
 ---
 
