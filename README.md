@@ -131,7 +131,7 @@ Decomposes narrative policy clauses into **atomic logical rules**.
 
 #### Output
 
-**Policy Condition JSON**: [Policy_CGSURG83.json](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/test1/Policy_CGSURG83/Policy_CGSURG83.json)
+**Policy Condition JSON**: [Policy_CGSURG_83.json](knowledge_base/runtime_outputs/Run_Time_Policy/CGSURG_83/Policy_CGSURG_83.json)
 
 ---
 
@@ -141,11 +141,11 @@ Translates policy logic into **executable SQL WHERE clauses** for database filte
 
 #### Input
 
-**Policy Condition JSON**: [Policy_CGSURG83.json](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/test1/Policy_CGSURG83/Policy_CGSURG83.json)
+**Policy Condition JSON**: [Policy_CGSURG_83.json](knowledge_base/runtime_outputs/Run_Time_Policy/CGSURG_83/Policy_CGSURG_83.json)
 
 #### Output
 
-**SQL**: [SQL_CGSURG83.txt](https://github.com/ananthulalohitaksha/Healthcare-Knowledge-Graph-System/blob/main/KG/test1/Policy_CGSURG83/SQL_CGSURG83.txt)
+**SQL File**: [SQL_CGSURG_83.txt](knowledge_base/runtime_outputs/Run_Time_Policy/CGSURG_83/SQL_CGSURG_83.txt)
 
 ```sql
 WHERE patient_age >= 18 
